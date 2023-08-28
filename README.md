@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
 
+##Implementations in Project;
+1-  Login component.
+2-  Tasks component.
+3- Authentication Guard.
+4- Service for  auth purpose.
+5- localstorage implemetation.
+6- toastr service to display message
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
