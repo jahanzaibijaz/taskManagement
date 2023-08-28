@@ -1,0 +1,30 @@
+<div class="signup-inner-block">
+  <div class="whiteBox-wrapper">
+    <div class="inner-border-block">
+      <div class="signup-top-block text-center p-b20 p-t20">
+        <div class="company-logo">
+          <img class="logo" src="assets/logo.jpg" alt="lint" />
+        </div>
+      </div>
+      <form class="form-horizontal form-width" [formGroup]="loginDetails" (submit)="onSubmit()">
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="text" class="input-design m-t05" formControlName="name" placeholder="Enter Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="password" class="input-design m-t05" formControlName="password" placeholder="Enter Password">
+          </div>
+        </div>
+        <div class="form-group submit-form" style="margin-top: 5px;">
+          <button type="submit" class="blue-btn btn-full" [disabled]="submitted">
+            <div *ngIf="!submitted">Log in</div>
+            <div class="spinner-border spinner-border-sm" role="status" *ngIf="submitted">
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

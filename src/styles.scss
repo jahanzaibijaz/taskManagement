@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '~ngx-toastr/toastr.css';
+
+
+
+.invalid-field {
+	.fields {
+		input.ng-invalid {
+			color: #e00400;
+			border-color: #e00400;
+			&::-webkit-input-placeholder {
+				color: #e00400;
+				opacity: 1;
+			}
+			&::-moz-placeholder {
+				color: #e00400;
+				opacity: 1;
+			}
+			&:-ms-input-placeholder {
+				color: #e00400;
+				opacity: 1;
+			}
+			&:-moz-placeholder {
+				color: #e00400;
+				opacity: 1;
+			}
+		}
+		textarea.ng-invalid {
+			color: #e00400;
+			border-color: #e00400;
+		}
+		select.ng-invalid {
+			color: #e00400;
+			border-color: #e00400;
+		}
+	}
+	.cs-select {
+		.dropdown.bootstrap-select.cs-select-effect {
+			.btn.bs-placeholder {
+				color: #e00400;
+				border-color: #e00400;
+			}
+		}
+	}
+}
+.valid-field {
+	.fields {
+		input {
+			border-color: #03bd95;
+		}
+		div.system-updated-message {
+			color: #03bd95;
+			font-size: 12px;
+		}
+	}
+}
+
+.direct-page-include, .offers-type-table {
+    border-wrap,
+    .bgTitle {
+      display: none;
+    }
+    .signup-inner-block {
+      box-shadow: none;
+    }
+  }
+
+  .signup-inner-block {
+	margin-top: 10%;
+    box-shadow: rgba(64, 53, 97, 0.25) 18px 22px 26px 12px, rgba(60, 148, 213, 0.44) 22px 47px 77px -28px;
+    height: 384px;
+	.whiteBox-wrapper {
+		.signup-top-block {
+			border-radius: 4px 4px 0 0px;
+			padding: 12px 0;
+			height: auto;
+		}
+	}
+}
+
+.company-logo {
+    max-width: 180px;
+    margin: 0px auto;
+}
+
+.spinner-border {
+    color: #6b6b6b;
+}

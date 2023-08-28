@@ -1,0 +1,49 @@
+<app-root></app-root>
+<div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+  <div class="row bg-white rounded shadow p-6 m-auto w-full lg:w-3/4 lg:max-w-lg mt-4">
+    <div class="text-center mt-2">
+      <div class="company-logo">
+        <img src="assets/logo.jpg" alt="lint" />
+      </div>
+    </div>
+    <div class="mb-4">
+      <h1 class="text-4xl font-black txt-heading">Todo List</h1>
+      <form [formGroup]="newTask" class="flex mt-4" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-lg-3 mr-70">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+              placeholder="Add task" formControlName="todoItem">
+          </div>
+          <div class="col-sm-2 m-r5">
+            <button type="submit"
+              class="btn btn-primary m-btn flex-no-shrink p-2 border-2 rounded ext-teal border-teal hover:text-black hover:bg-teal">Add
+            </button>
+          </div>
+          <select class="form-select form-select-sm" name="selectAction" [(ngModel)]="selectedDDValue"
+            [ngModelOptions]="{standalone: true}" (change)="changeSelection(selectedDDValue)">
+            <option *ngFor="let op of ddList" [ngValue]="op" class="rounded">
+              {{op?.value}}
+            </option>
+          </select>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="row">
+      <h2 class="no-record" *ngIf="taskList.length == 0"> No record Found</h2>
+    </div>
+
+    <div class="row">
+      <div [ngClass]="{'border-cmpleted-tasks': value.completed}" class="flex mb-4 items-center display-items"
+        *ngFor="let value of taskList; index as i">
+        <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">{{value.name}}</p>
+        <button
+          class="btn btn-success flex-no-shrink p-2 ml-4 mr-2 border-2 rounded  text-green border-green hover:bg-green mr-15"
+          (click)="markDone(value)" [disabled]="value.completed ==true">Done</button>
+        <button class=" btn btn-success flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red  hover:bg-red"
+          (click)="removeTask(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
